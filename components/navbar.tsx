@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const navItems = [
-  { href: "/", label: "Inicio" },
-  { href: "/projects", label: "Proyectos" },
-  { href: "/about", label: "Sobre mí" },
-  { href: "/contact", label: "Contacto" },
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+  { href: "/about", label: "About Me" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navbar() {

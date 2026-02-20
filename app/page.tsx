@@ -6,10 +6,10 @@ export default function HomePage() {
     <section className="space-y-8">
       <p className="text-sm uppercase tracking-[0.2em] text-accent">Full Stack Developer</p>
       <h1 className="max-w-3xl text-4xl font-bold leading-tight md:text-6xl">
-        Hola, soy Isaac. Construyo productos web rápidos, elegantes y listos para escalar.
+        Hi, I'm Isaac Pasapera
       </h1>
       <p className="max-w-2xl text-muted">
-        Este MVP está diseñado para mostrar proyectos, experiencia y un asistente IA con contexto real de mi perfil.
+        This MVP portfolio is built with Next.js, Tailwind CSS and deployed on Vercel and implement IA agent. It features a clean architecture, fast performance and a responsive design. Check out my projects and contact me if you want to work together!
       </p>
       <div className="flex gap-4">
         <Link className="rounded-lg bg-accent px-5 py-2.5 font-semibold text-slate-900" href="/projects">

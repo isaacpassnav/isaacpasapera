@@ -4,6 +4,31 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
 
+function GitHubIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5" aria-hidden>
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+    </svg>
+  );
+}
+
+function ExternalIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5" aria-hidden>
+      <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clipRule="evenodd" />
+      <path fillRule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function ClockIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5" aria-hidden>
+      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 export default function ProjectsPage() {
   return (
     <section className="space-y-6">
@@ -43,18 +68,51 @@ export default function ProjectsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.07 }}
             whileHover={{ y: -5, transition: { duration: 0.18 } }}
-            className="card p-5"
+            className="card flex flex-col p-5"
           >
             <p className="text-xs text-slate-400">{project.year}</p>
             <h2 className="mt-2 text-xl font-semibold">{project.title}</h2>
-            <p className="mt-3 text-sm text-muted">{project.summary}</p>
-            <p className="mt-4 text-xs text-accent">{project.tech.join(" | ")}</p>
-            <Link
-              className="mt-5 inline-block text-sm font-medium text-cyan-200 hover:text-cyan-100"
-              href={`/projects/${project.slug}`}
-            >
-              Read case study
-            </Link>
+            <p className="mt-3 flex-1 text-sm text-muted">{project.summary}</p>
+            <p className="mt-4 text-xs text-accent">{project.tech.join(" · ")}</p>
+
+            {/* Action buttons */}
+            <div className="mt-5 flex flex-wrap items-center gap-2">
+              {project.repoUrl && (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 px-3 py-1.5 text-xs text-slate-300 transition-colors hover:border-slate-500 hover:text-white"
+                >
+                  <GitHubIcon /> GitHub
+                </a>
+              )}
+
+              {project.liveUrl ? (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-accent/30 px-3 py-1.5 text-xs text-accent transition-colors hover:border-accent/70 hover:text-cyan-300"
+                >
+                  <ExternalIcon /> Live Demo
+                </a>
+              ) : (
+                <Link
+                  href="/coming-soon"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-slate-800 px-3 py-1.5 text-xs text-slate-500 transition-colors hover:border-slate-700 hover:text-slate-400"
+                >
+                  <ClockIcon /> Coming Soon
+                </Link>
+              )}
+
+              <Link
+                href={`/projects/${project.slug}`}
+                className="ml-auto text-xs text-cyan-200 hover:text-cyan-100"
+              >
+                Details →
+              </Link>
+            </div>
           </motion.article>
         ))}
       </div>

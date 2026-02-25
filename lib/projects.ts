@@ -13,7 +13,8 @@ export type Project = {
   tech: string[];
   highlights: string[];
   href: string;
-  repoUrl: string;
+  repoUrl?: string;
+  liveUrl?: string;
   year: string;
   featured: boolean;
   status: ProjectStatus;
@@ -31,6 +32,7 @@ export const projects: Project[] = [
     highlights: ["Appointment CRUD", "Availability validation", "Structured API routes"],
     href: "https://github.com/isaacpassnav/appointment-system",
     repoUrl: "https://github.com/isaacpassnav/appointment-system",
+    liveUrl: "https://appointment-system-web-delta.vercel.app/",
     year: "2025",
     featured: true,
     status: "active",
@@ -46,6 +48,7 @@ export const projects: Project[] = [
     highlights: ["Catalog and cart flows", "Order path modeling", "Reusable UI components"],
     href: "https://github.com/isaacpassnav/E-commerce",
     repoUrl: "https://github.com/isaacpassnav/E-commerce",
+    liveUrl: "https://e-commerce-delta-flax-84.vercel.app/login",
     year: "2025",
     featured: true,
     status: "active",
@@ -61,6 +64,7 @@ export const projects: Project[] = [
     highlights: ["Responsive layout", "Semantic sections", "Component-oriented structure"],
     href: "https://github.com/isaacpassnav/M02PaginaWeb",
     repoUrl: "https://github.com/isaacpassnav/M02PaginaWeb",
+    liveUrl: "https://m02-pagina-web.vercel.app/",
     year: "2024",
     featured: false,
     status: "archive",
@@ -76,6 +80,7 @@ export const projects: Project[] = [
     highlights: ["End-to-end structure", "Iterative feature delivery", "Production mindset"],
     href: "https://github.com/isaacpassnav/FWS-isaac",
     repoUrl: "https://github.com/isaacpassnav/FWS-isaac",
+    liveUrl: "https://fws-isaac.vercel.app/",
     year: "2024",
     featured: false,
     status: "archive",
@@ -91,6 +96,7 @@ export const projects: Project[] = [
     highlights: ["Route controllers", "Data persistence", "Validation basics"],
     href: "https://github.com/isaacpassnav/wdd430-project",
     repoUrl: "https://github.com/isaacpassnav/wdd430-project",
+    liveUrl: "https://wdd430-project-five.vercel.app/home",
     year: "2024",
     featured: true,
     status: "active",
@@ -106,6 +112,7 @@ export const projects: Project[] = [
     highlights: ["External events API", "Search and filtering", "Responsive cards"],
     href: "https://github.com/isaacpassnav/Concerts-Events-Finder-App",
     repoUrl: "https://github.com/isaacpassnav/Concerts-Events-Finder-App",
+    liveUrl: "https://isaacpassnav.github.io/Concerts-Events-Finder-App/",
     year: "2025",
     featured: true,
     status: "active",
@@ -120,7 +127,6 @@ export const projects: Project[] = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     highlights: ["Server routes", "Typed project catalog", "Deploy-ready setup"],
     href: "https://example.com",
-    repoUrl: "https://example.com",
     year: "2026",
     featured: true,
     status: "production",
@@ -136,7 +142,6 @@ export const projects: Project[] = [
     tech: ["React", "Node.js", "PostgreSQL"],
     highlights: ["KPI modules", "Role-aware interface", "Data persistence"],
     href: "https://example.com",
-    repoUrl: "https://example.com",
     year: "2025",
     featured: false,
     status: "active",
@@ -151,7 +156,6 @@ export const projects: Project[] = [
     tech: ["Next.js", "OpenAI API", "REST"],
     highlights: ["Prompt design", "Error handling", "Domain response constraints"],
     href: "https://example.com",
-    repoUrl: "https://example.com",
     year: "2025",
     featured: false,
     status: "active",

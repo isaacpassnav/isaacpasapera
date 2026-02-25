@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(cd /d/workDev/isaacpasapera && npm run typecheck 2>&1)",
+      "Bash(cd /d/workDev/isaacpasapera && npm run build 2>&1)",
+      "Bash(echo OK:*)"
+    ]
+  }
+}

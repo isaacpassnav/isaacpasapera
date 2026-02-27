@@ -1,4 +1,4 @@
-# Roadmap de 3 días (enfoque delivery-first)
+# Roadmap (enfoque delivery-first)
 
 ## Día 1 · Base sólida + UI principal
 

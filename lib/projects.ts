@@ -48,7 +48,7 @@ export const projects: Project[] = [
     highlights: ["Catalog and cart flows", "Order path modeling", "Reusable UI components"],
     href: "https://github.com/isaacpassnav/E-commerce",
     repoUrl: "https://github.com/isaacpassnav/E-commerce",
-    liveUrl: "https://e-commerce-delta-flax-84.vercel.app/login",
+    liveUrl: "https://e-commerce-delta-flax-84.vercel.app/",
     year: "2025",
     featured: true,
     status: "active",
